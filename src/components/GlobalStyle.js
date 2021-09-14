@@ -6,9 +6,9 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-
     body{
         background: #0e0d0d;
+        font-family: 'Poppins', sans-serif;
     }
     .main-button{
         font-weight: bold;
