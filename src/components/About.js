@@ -1,5 +1,5 @@
 import React from 'react';
-// import img1 from '../img/about-img.jpg';
+import img1 from '../img/test1.jpg';
 // Styled Components
 import styled from 'styled-components';
 import { StyledAbout, StyledDescription, Hide, StyledImage } from '../styles';
@@ -25,7 +25,7 @@ const About = () =>{
                 <button className="main-button">Look around</button>
             </StyledDescription>
             <StyledImage>
-                <img src="" alt="" />
+                <img src={img1} alt="" />
             </StyledImage>
         </StyledAbout>
     );
