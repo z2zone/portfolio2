@@ -3,10 +3,18 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import Gourmet from '../img/project1.png';
 import DAG from '../img/project2.png';
+//Animation
+import { motion } from 'framer-motion';
+import { mainAnimation } from './aminations';
 
 const Projects = () => {
     return(
-        <StyledProjects>
+        <StyledProjects
+            variants={mainAnimation}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+        >
             <StyledProject>
                 <h2>Montreal Gourmet</h2>
                 <div className="line"></div>
@@ -25,7 +33,7 @@ const Projects = () => {
     );
 }
 
-const StyledProjects = styled.div`
+const StyledProjects = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;

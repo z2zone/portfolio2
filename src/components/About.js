@@ -1,37 +1,41 @@
 import React from 'react';
 import img1 from '../img/test1.jpg';
+import Wave from './Wave';
+
 // Styled Components
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { StyledAbout, StyledDescription, Hide, StyledImage } from '../styles';
+
+// Animation
+import { motion } from 'framer-motion';
+import { titleAnimation, fadeAnimation, photoAnimation } from '../pages/aminations';
 
 const About = () =>{
     return(
         <StyledAbout>
             <StyledDescription>
-                <div className="jumbo-title">
+                <motion.div>
                     <Hide>
-                        <h2>Hello My name is</h2>
+                        <motion.h2 variants={titleAnimation}>Hello My name is</motion.h2>
                     </Hide>
                     <Hide>
-                        <h2><span>Brandon Cho</span></h2>
+                        <motion.h2 variants={titleAnimation}><span>Brandon Cho</span></motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>Roast me</h2>
+                        <motion.h2 variants={titleAnimation}>Roast me</motion.h2>
                     </Hide>
-                </div>
-                <p>
+                </motion.div>
+                <motion.p variants={fadeAnimation}>
                     Hello thank you for visiting my page. This is a demo project, revamping my portfolio website using React.
-                </p>
-                <button className="main-button">Look around</button>
+                </motion.p>
+                <motion.button className="main-button">Look around</motion.button>
             </StyledDescription>
             <StyledImage>
-                <img src={img1} alt="" />
+                <motion.img variants={photoAnimation} src={img1} alt="" />
             </StyledImage>
+            <Wave/>
         </StyledAbout>
     );
 }
-
-//Styled Components
-
 
 export default About;

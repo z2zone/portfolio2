@@ -1,13 +1,21 @@
 import React from 'react';
 import About from '../components/About';
-import Services from '../components/Services';
+import Works from '../components/Works';
+// Animations
+import { motion } from 'framer-motion';
+import { mainAnimation } from './aminations';
 
 const Main = () => {
     return(
-        <>
+        <motion.div
+            variants={mainAnimation} 
+            initial="hidden"
+            animate="show"
+            exit="exit"
+        >
             <About/>
-            <Services/>
-        </>
+            <Works/>
+        </motion.div>
     );
 }
 

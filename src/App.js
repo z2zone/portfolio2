@@ -10,31 +10,37 @@ import Projects from './pages/Projects';
 import Nav from './components/Nav';
 
 //Router 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 //Styled Components
 import GlobalStyle from './components/GlobalStyle';
 
+//Animation 
+import { AnimatePresence } from 'framer-motion';
+
 const App = () =>{
+    const location = useLocation();
+    
     return(
         <div className="App">
             <GlobalStyle/>
             <Nav/>
-            <Switch>
-                <Route path="/" exact>
-                <Main/>
-                </Route>
-                <Route path="/projects">
-                    <Projects/>
-                </Route>
-                <Route path="/experience">
-                    <Experience/>
-                </Route>
-                <Route path="/reachmeout">
-                    <ReachMeOut/>
-                </Route>
-            </Switch>
-
+            <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                    <Route path="/" exact>
+                    <Main/>
+                    </Route>
+                    <Route path="/projects">
+                        <Projects/>
+                    </Route>
+                    <Route path="/experience">
+                        <Experience/>
+                    </Route>
+                    <Route path="/reachmeout">
+                        <ReachMeOut/>
+                    </Route>
+                </Switch>
+            </AnimatePresence>
         </div>
     );
 }

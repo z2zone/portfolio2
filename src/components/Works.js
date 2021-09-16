@@ -3,9 +3,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { StyledAbout, StyledDescription, Hide, StyledImage } from '../styles';
 
-const Services = () =>{
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+import { scrollAnimation } from '../pages/aminations';
+
+const Works = () =>{
+    const controls = useAnimation();
+    const [element, view] = useInView({threshold: 0.25});
+
+    if(view){
+        controls.start("show");
+    }else{
+        controls.start("hidden");
+    }
+
     return(
-        <StyledServices>
+        <StyledServices 
+            ref={element}
+            variants={scrollAnimation}
+            animate={controls}
+            initial="hidden"
+        >
             <StyledDescription>
                 <h2>Some of the <span>skills</span> I have</h2>
                 <StyledCards>
@@ -69,4 +87,4 @@ const StyledCard = styled.div`
     }
 `;
 
-export default Services;
+export default Works;
