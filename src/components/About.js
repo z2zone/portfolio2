@@ -26,7 +26,7 @@ const About = () =>{
                     </Hide>
                 </motion.div>
                 <motion.p variants={fadeAnimation}>
-                    Hello thank you for visiting my page. This is a demo project, revamping my portfolio website using React.
+                    Hello there, my name is Brandon and I am a person with real passion for development and design of applications. I aim for more than just nice looking websites; I want to build exceptional digital projects with solid strategy and background knowledge. I enjoy learning new and powerful technologies that can expand my horizon.
                 </motion.p>
                 <motion.button className="main-button">Look around</motion.button>
             </StyledDescription>
@@ -39,3 +39,4 @@ const About = () =>{
 }
 
 export default About;
+

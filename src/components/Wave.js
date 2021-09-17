@@ -23,6 +23,7 @@ const Wave = () => {
 };
 
 const WaveSvg = styled.svg`
+  max-width: 100%;
   position: absolute;
   left: 0;
   z-index: -1;

@@ -1,6 +1,6 @@
 import React from 'react';
 import About from '../components/About';
-import Works from '../components/Works';
+import Skills from '../components/Skills';
 // Animations
 import { motion } from 'framer-motion';
 import { mainAnimation } from './aminations';
@@ -14,7 +14,7 @@ const Main = () => {
             exit="exit"
         >
             <About/>
-            <Works/>
+            <Skills/>
         </motion.div>
     );
 }

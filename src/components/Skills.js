@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
 import { scrollAnimation } from '../pages/aminations';
 
-const Works = () =>{
+const Skills = () =>{
     const controls = useAnimation();
     const [element, view] = useInView({threshold: 0.25});
 
@@ -87,4 +87,4 @@ const StyledCard = styled.div`
     }
 `;
 
-export default Works;
+export default Skills;

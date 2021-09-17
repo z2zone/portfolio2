@@ -65,7 +65,7 @@ export const photoAnimation = {
 export const scrollAnimation = {
     hidden: {
         opacity: 0,
-        scale: 1.5
+        scale: 0.7
     },
     show: {
         opacity: 1,
